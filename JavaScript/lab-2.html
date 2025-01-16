@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NoScript</title>
+</head>
+<body>
+    <h1>NoScript</h1>
+    <noscript>
+        <p>JavaScript is disabled.</p>
+        <p>Please enable JavaScript to view this content.</p>
+    </noscript>
+    <div id="content" style="display: none;">
+        <p>This content is only visible when JavaScript is enabled.</p>
+    </div>
+    <script>
+        document.getElementById('content').style.display = 'block';
+    </script>
+</body>
+</html>
