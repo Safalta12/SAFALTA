@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Array Elements</title>
+</head>
+<body>
+    <h1>Logging Array Elements</h1>
+    <script>
+        // Define an array
+        const array = [1, 2, 3, 4, 5];
+        
+        // Log array elements using a for loop
+        console.log("Using for loop:");
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+        
+        // Log array elements to the console using forEach method
+        console.log("\nUsing forEach loop:");
+        array.forEach(function(element) {
+            console.log(element);
+        });
+        
+        // Log array elements to the console using a for...of loop
+        console.log("\nUsing for...of loop:");
+        for (const element of array) {
+            console.log(element);
+        }
+    </script>
+</body>
+</html>

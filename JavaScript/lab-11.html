@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+
+    <ul id="employeeList">
+        <!-- Employee details will be displayed here -->
+    </ul>
+
+    <script>
+        // Define an array of objects representing employees
+        var employees = [
+            {
+                firstName: "Robin",
+                lastName: "Doe",
+                age: 30,
+                department: "Engineering",
+                position: "Software Developer",
+                salary: 40000
+            },
+            {
+                firstName: "Jisoo",
+                lastName: "Smith",
+                age: 28,
+                department: "Marketing",
+                position: "Marketing Specialist",
+                salary: 35000
+            },
+            {
+                firstName: "Alice",
+                lastName: "Rogger",
+                age: 35,
+                department: "Finance",
+                position: "Financial Analyst",
+                salary: 50000
+            }
+        ];
+
+        // Function to display employee details in an HTML list
+        function displayEmployeeList() {
+            const employeeListUl = document.getElementById("employeeList");
+
+            // Iterate over each employee object in the employees array
+            employees.forEach(function(employee) {
+                // Create a list item element for each employee
+                const li = document.createElement("li");
+
+                // Set the text content of the list item to display employee details
+                li.textContent = `${employee.firstName} ${employee.lastName} | Age: ${employee.age} | Department: ${employee.department} | Position: ${employee.position} | Salary: ${employee.salary}`;
+
+                // Append the list item to the employeeListUl
+                employeeListUl.appendChild(li);
+            });
+        }
+
+        // Call the function to display employee list
+        displayEmployeeList();
+    </script>
+</body>
+</html>
+ 
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm(event)">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Stored Details:</h3>
+    <div id="output"></div>
+
+    <script>
+        function validateForm(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('address').value;
+
+            // Validate student name
+            if (name.trim() === '') {
+                alert('Please enter student name.');
+                return false;
+            }
+            // Validate email
+            if (email.trim() === '') {
+                alert('Please enter email address.');
+                return false;
+            } else if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            // Validate address
+            if (address.trim() === '') {
+                alert('Please enter address.');
+                return false;
+            }
+
+            // Display data
+            displayData(name, email, address);
+
+            return false; // Prevent the form from reloading
+        }
+
+        // Function to validate email format
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+
+        // Function to display submitted data
+        function displayData(name, email, address) {
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Address:</strong> ${address}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show/Hide Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<button id="toggleButton">Toggle Element</button>
+<div id="elementToToggle" class="hidden">
+    This is the element to show/hide.
+</div>
+
+<script>
+$(document).ready(function(){
+    // When the button is clicked
+    $("#toggleButton").click(function(){
+        // Toggle the visibility of the element
+        $("#elementToToggle").toggle();
+    });
+});
+</script>
+</body>
+</html>
