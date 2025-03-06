@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+
+    <ul id="studentList"></ul>
+    <script>
+        var students = [
+            {
+                roll_no: 30,
+                name:"Jisoo",
+                email:"jisoo@gmail.com"
+            },
+            {
+                roll_no: 28,
+                name:"Ram",
+                email: "ram@gamil.com"
+            },
+            {
+                roll_no: 26,
+                name:"Shyam",
+                email: "shyam@gamil.com"
+            },
+            {
+                roll_no: 24,
+                name:"Geeta",
+                email: "geeta@gamil.com"
+            },
+            {
+                roll_no: 22,
+                name:"Rita",
+                email: "rita@gamil.com"
+            },
+        ];
+        function displayStudentsList() {
+            const studentsListUl = document.getElementById("studentList");
+            students.forEach(function(student) {
+                const li = document.createElement("li");
+                li.textContent = `${student.roll_no} ${student.name} ${student.email}  `;
+                studentsListUl.appendChild(li);
+            });
+        }
+        displayStudentsList();
+    </script>
+</body>
+</html>
+ 
+
